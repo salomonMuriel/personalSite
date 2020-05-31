@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby.JS`,
-    description: `Gatsby Markdown Personal Website Starter, using Typescript, Styled Components, Tailwindcss and Framer Motion.`,
-    author: `Saimir Kapaj`
+    title: `Salomon Muriel`,
+    description: `Salomon Muriel's Personal Site`,
+    author: `Salomon Muriel`
   },
   plugins: [
     `gatsby-plugin-typescript`,
@@ -40,8 +40,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-personal-website-starter`,
-        short_name: `starter`,
+        name: `salomon-muriel-website`,
+        short_name: `salomonmuriel`,
         start_url: `/`,
         background_color: `#81e6d9`,
         theme_color: `#81e6d9`,
