@@ -1,8 +1,8 @@
 ---
 category: 'hero section'
-title: 'Frontend Developer'
-subtitle: 'I am the Great Gatsby'
-content: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
+title: 'Entrepreneur, Data Scientist and Consultant'
+subtitle: 'I am Salomón Muriel'
+content: 'I founded prestagente.com, beriblock.com and am now starting up with finco.co. My expertise is in data-driven organizations, entrepreneurship and implementing an innovation mindset and novel technologies.'
 linkTo: '/resume/'
 linkText: 'View My Profile'
 ---
