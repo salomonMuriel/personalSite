@@ -3,12 +3,17 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 import Banner from 'components/ui/Banner';
 
-import { SectionTitle } from 'helpers/definitions';
+import { SectionTitle, ImageSharpFluid } from 'helpers/definitions';
 
 interface SectionHeroBanner extends SectionTitle {
   content: string;
   linkTo: string;
   linkText: string;
+  img: {
+    childImageSharp: {
+      fluid: ImageSharpFluid;
+    };
+  }
 }
 
 const HeroBanner: React.FC = () => {
@@ -21,6 +26,13 @@ const HeroBanner: React.FC = () => {
           content
           linkTo
           linkText
+          img {
+            childImageSharp {
+              fluid(maxWidth: 800) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
         }
       }
     }
@@ -35,6 +47,7 @@ const HeroBanner: React.FC = () => {
       content={heroBanner.content}
       linkTo={heroBanner.linkTo}
       linkText={heroBanner.linkText}
+      img={heroBanner.img.childImageSharp.fluid}
     />
   );
 };
