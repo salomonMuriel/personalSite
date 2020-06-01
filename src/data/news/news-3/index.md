@@ -1,5 +1,5 @@
 ---
-category: 'testimonials'
+category: 'news'
 cover: './testimonial-3.jpg'
 title: 'Jordan Baker'
 ---

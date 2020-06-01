@@ -1,5 +1,5 @@
 ---
-category: 'testimonials'
+category: 'news'
 cover: './testimonial-2.jpg'
 title: 'Daisy Buchanan'
 ---

@@ -9,6 +9,7 @@ import { IconProps } from 'components/ui/Icon';
 import { SectionTitle } from 'helpers/definitions';
 
 import * as Styled from './styles';
+import Newsletter from 'components/Form';
 
 interface Contact {
   node: {
@@ -49,21 +50,24 @@ const ConctactInfo: React.FC = () => {
   const contacts: Contact[] = allMarkdownRemark.edges;
 
   return (
-    <Container section>
-      <TitleSection title={sectionTitle.title} subtitle={sectionTitle.subtitle} center />
-      {contacts.map((item) => {
-        const {
-          id,
-          frontmatter: { title, icon, content }
-        } = item.node;
+    <div>
+      <Container section>
+        <TitleSection title={sectionTitle.title} subtitle={sectionTitle.subtitle} center />
+        {contacts.map((item) => {
+          const {
+            id,
+            frontmatter: { title, icon, content }
+          } = item.node;
 
-        return (
-          <Styled.ContactInfoItem key={id}>
-            <InfoBlock icon={icon} title={title} content={content} center />
-          </Styled.ContactInfoItem>
-        );
-      })}
-    </Container>
+          return (
+            <Styled.ContactInfoItem key={id}>
+              <InfoBlock icon={icon} title={title} content={content} center />
+            </Styled.ContactInfoItem>
+          );
+        })}
+      </Container>
+      <Newsletter />
+    </div>
   );
 };
 

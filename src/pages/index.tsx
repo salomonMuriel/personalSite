@@ -4,8 +4,8 @@ import Layout from 'components/Layout';
 import SEO from 'components/SEO';
 import HeroBanner from 'components/HeroBanner';
 import Services from 'components/Services';
-import Testimonials from 'components/Testimonials';
-import Newsletter from 'components/Newsletter';
+import News from 'components/News';
+import Newsletter from 'components/Form';
 
 const IndexPage: React.FC = () => {
   return (
@@ -15,7 +15,7 @@ const IndexPage: React.FC = () => {
       <Services />
       <hr />
       <Newsletter/>
-      <Testimonials />
+      <News />
     </Layout>
   );
 };

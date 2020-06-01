@@ -1,5 +1,5 @@
 ---
-category: 'testimonials'
+category: 'news'
 cover: './testimonial-1.jpg'
 title: 'Nick Carraway'
 ---

@@ -13,7 +13,7 @@ import * as Styled from './styles';
 
 const Carousel = Loadable(() => import('components/ui/Carousel'));
 
-interface Testimonial {
+interface News {
   node: {
     id: string;
     html: string;
@@ -28,16 +28,16 @@ interface Testimonial {
   };
 }
 
-const Testimonials: React.FC = () => {
+const News: React.FC = () => {
   const { markdownRemark, allMarkdownRemark } = useStaticQuery(graphql`
     query {
-      markdownRemark(frontmatter: { category: { eq: "testimonials section" } }) {
+      markdownRemark(frontmatter: { category: { eq: "news section" } }) {
         frontmatter {
           title
           subtitle
         }
       }
-      allMarkdownRemark(filter: { frontmatter: { category: { eq: "testimonials" } } }) {
+      allMarkdownRemark(filter: { frontmatter: { category: { eq: "news" } } }) {
         edges {
           node {
             id
@@ -59,14 +59,14 @@ const Testimonials: React.FC = () => {
   `);
 
   const sectionTitle: SectionTitle = markdownRemark.frontmatter;
-  const testimonials: Testimonial[] = allMarkdownRemark.edges;
+  const news: News[] = allMarkdownRemark.edges;
 
   return (
     <Container section>
       <TitleSection title={sectionTitle.title} subtitle={sectionTitle.subtitle} center />
-      <Styled.Testimonials>
+      <Styled.News>
         <Carousel>
-          {testimonials.map((item) => {
+          {news.map((item) => {
             const {
               id,
               html,
@@ -74,19 +74,19 @@ const Testimonials: React.FC = () => {
             } = item.node;
 
             return (
-              <Styled.Testimonial key={id}>
+              <Styled.Clip key={id}>
                 <Styled.Image>
                   <Img fluid={cover.childImageSharp.fluid} alt={title} />
                 </Styled.Image>
                 <Styled.Title>{title}</Styled.Title>
                 <FormatHtml content={html} />
-              </Styled.Testimonial>
+              </Styled.Clip>
             );
           })}
         </Carousel>
-      </Styled.Testimonials>
+      </Styled.News>
     </Container>
   );
 };
 
-export default Testimonials;
+export default News;
