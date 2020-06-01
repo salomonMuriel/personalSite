@@ -4,6 +4,7 @@ cover: './cover.jpg'
 title: 'Blog Post 1'
 description: 'Mauris neque libero, aliquet vel mollis nec, euismod sed tellus. Mauris convallis dictum elit id volutpat.'
 date: '2019-11-13'
+langKey: 'en'
 tags: ['Photography']
 published: true
 ---

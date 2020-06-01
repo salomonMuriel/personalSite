@@ -9,6 +9,7 @@ import Newsletter from 'components/Form';
 import 'assets/styles/global.css';
 import GlobalStyles from 'assets/styles/globalStyles';
 import * as Styled from './styles';
+import LangContext from 'context/LangContext';
 
 interface Props {
   children: React.ReactNode;
@@ -28,20 +29,23 @@ const Layout: React.FC<Props> = ({ children }) => {
   return (
     <>
       <GlobalStyles />
-      <AnimatePresence exitBeforeEnter>
-        <Styled.Layout>
-          <Header siteTitle={data.site.siteMetadata.title} />
-          <motion.div
-            initial={{ y: 30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ delay: 0.2 }}
-          >
-            {children}
-            <Footer />
-          </motion.div>
-        </Styled.Layout>
-      </AnimatePresence>
+      <LangContext.Consumer>
+        {lang => (
+          <AnimatePresence exitBeforeEnter>
+            <Styled.Layout>
+              <Header siteTitle={data.site.siteMetadata.title} />
+              <motion.div
+                initial={{ y: 30, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ delay: 0.2 }}
+              >
+                {children}
+                <Footer />
+              </motion.div>
+            </Styled.Layout>
+          </AnimatePresence>)}
+      </LangContext.Consumer>
     </>
   );
 };

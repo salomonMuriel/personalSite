@@ -9,3 +9,7 @@ export const Header = styled.header`
 export const Wrapper = styled(Container)`
   ${tw`items-center`};
 `;
+
+export const Flag = styled.img`
+${tw`w-10 h-10 mr-3 border border-teal-400 rounded-full`};
+`;

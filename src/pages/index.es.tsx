@@ -10,7 +10,7 @@ import Newsletter from 'components/Form';
 const IndexPage: React.FC = () => {
   return (
     <Layout>
-      <SEO title="About me" />
+      <SEO title="Acerca de mí" />
       <HeroBanner />
       <Services />
       <hr />
