@@ -34,7 +34,7 @@ const Logo: React.FC = () => {
         (
           <Styled.Logo to={"/"+lang.lang}>
             <Styled.Image>
-              <Img fluid={logoImage} alt={logoTitle} />
+              <Img fluid={logoImage} alt={logoTitle}/>
             </Styled.Image>
             <Styled.Text>{logoTitle}</Styled.Text>
           </Styled.Logo>
