@@ -15,7 +15,7 @@ const IndexPage: React.FC = () => {
       <Services />
       <hr />
       <Newsletter/>
-      <News />
+      {/* <News /> */}
     </Layout>
   );
 };
