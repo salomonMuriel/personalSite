@@ -10,7 +10,7 @@ export const Timeline = styled.div`
 `;
 
 export const Details = styled.div`
-  ${tw`w-full sm:w-1/3`};
+  ${tw`w-full sm:w-1/3 flex-col items-start`};
 `;
 
 export const Content = styled.div`

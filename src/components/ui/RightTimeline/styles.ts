@@ -5,12 +5,12 @@ export const Timeline = styled.div`
   ${tw`flex flex-col sm:flex-row w-full p-4 relative border-r border-indigo-200`};
 
   &:last-child {
-    ${tw`pb-0`};
+    ${tw`pb-10`};
   }
 `;
 
 export const Details = styled.div`
-  ${tw`w-full sm:w-1/3`};
+  ${tw`w-full sm:w-1/3 flex flex-col items-end`};
 `;
 
 export const Content = styled.div`
@@ -31,7 +31,7 @@ export const Date = styled.div`
 `;
 
 export const Point = styled.span`
-  ${tw`w-3 h-3 border border-indigo-200 bg-indigo-100 rounded-full absolute`};
+  ${tw`w-3 h-3 border border-indigo-300 bg-indigo-300 rounded-full absolute`};
   right: -6px;
   top: 20px;
 `;

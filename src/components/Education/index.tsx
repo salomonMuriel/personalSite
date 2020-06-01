@@ -2,7 +2,7 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import Timeline from 'components/ui/RightTimeline';
-import Container from 'components/ui/Container';
+import * as Styled from './styles';
 import TitleSection from 'components/ui/TitleSection';
 import FormatHtml from 'components/utils/FormatHtml';
 
@@ -54,28 +54,30 @@ const Education: React.FC = () => {
   const education: Education[] = allMarkdownRemark.edges;
 
   return (
-    <Container section>
-      <TitleSection title={sectionTitle.title} subtitle={sectionTitle.subtitle} />
+    <Styled.Banner>
+      <Styled.Container>
+        <TitleSection title={sectionTitle.title} subtitle={sectionTitle.subtitle} />
 
-      {education.map((item) => {
-        const {
-          id,
-          html,
-          frontmatter: { university, degree, startDate, endDate }
-        } = item.node;
+        {education.map((item) => {
+          const {
+            id,
+            html,
+            frontmatter: { university, degree, startDate, endDate }
+          } = item.node;
 
-        return (
-          <Timeline
-            key={id}
-            title={university}
-            subtitle={degree}
-            content={<FormatHtml content={html} />}
-            startDate={startDate}
-            endDate={endDate}
-          />
-        );
-      })}
-    </Container>
+          return (
+            <Timeline
+              key={id}
+              title={university}
+              subtitle={degree}
+              content={<FormatHtml content={html} />}
+              startDate={startDate}
+              endDate={endDate}
+            />
+          );
+        })}
+      </Styled.Container>
+    </Styled.Banner>
   );
 };
 

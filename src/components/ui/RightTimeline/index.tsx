@@ -12,7 +12,7 @@ interface Props {
 
 const Timeline: React.FC<Props> = ({ title, subtitle, content, startDate, endDate }) => (
   <Styled.Timeline>
-    <Styled.Point />
+    <Styled.Content>{content}</Styled.Content>
     <Styled.Details>
       <Styled.Date>
         {startDate} - {endDate}
@@ -20,7 +20,7 @@ const Timeline: React.FC<Props> = ({ title, subtitle, content, startDate, endDat
       <Styled.Title>{title}</Styled.Title>
       <Styled.Subtitle>{subtitle}</Styled.Subtitle>
     </Styled.Details>
-    <Styled.Content>{content}</Styled.Content>
+    <Styled.Point />
   </Styled.Timeline>
 );
 
