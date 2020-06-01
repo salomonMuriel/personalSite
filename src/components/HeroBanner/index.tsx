@@ -6,7 +6,8 @@ import Banner from 'components/ui/Banner';
 import { SectionTitle, ImageSharpFluid } from 'helpers/definitions';
 
 interface SectionHeroBanner extends SectionTitle {
-  content: string;
+  content1: string;
+  content2: string;
   linkTo: string;
   linkText: string;
   img: {
@@ -23,7 +24,8 @@ const HeroBanner: React.FC = () => {
         frontmatter {
           title
           subtitle
-          content
+          content1
+          content2
           linkTo
           linkText
           img {
@@ -44,7 +46,8 @@ const HeroBanner: React.FC = () => {
     <Banner
       title={heroBanner.title}
       subtitle={heroBanner.subtitle}
-      content={heroBanner.content}
+      content1={heroBanner.content1}
+      content2={heroBanner.content2}
       linkTo={heroBanner.linkTo}
       linkText={heroBanner.linkText}
       img={heroBanner.img.childImageSharp.fluid}

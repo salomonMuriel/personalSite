@@ -12,20 +12,21 @@ import { LeftContent } from './styles';
 interface Props {
   title: string;
   subtitle?: string;
-  content: React.ReactNode;
+  content1: React.ReactNode;
+  content2: React.ReactNode;
   linkTo?: string;
   linkText?: string;
   img?: ImageSharpFluid;
 }
 
-const Banner: React.FC<Props> = ({ title, subtitle, content, linkTo, linkText, img }) => {
+const Banner: React.FC<Props> = ({ title, subtitle, content1, content2, linkTo, linkText, img }) => {
   return (
     <Styled.Banner>
       <Container section>
         <LeftContent>
           <TitleSection title={title} subtitle={subtitle} />
-          <Styled.Content>{content}
-          </Styled.Content>
+          <Styled.Content>{content1}</Styled.Content>
+          <Styled.Content>{content2}</Styled.Content>
           {linkTo?
           <Link to={linkTo}>
             <Button primary>{linkText}</Button>
