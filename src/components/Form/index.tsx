@@ -38,11 +38,17 @@ const Newsletter: React.FC = () => {
   return (
     <Styled.Newsletter>
       <Container section>
+        <form name="contact-form" data-netlify={true} netlify-honeypot="bot-field" hidden>
+          <input type="text" name="name" />
+          <input type="email" name="email" />
+          <input type="tel" name="phone" />
+          <textarea name="message"></textarea>
+        </form>
         <TitleSection title={newsletter.title} subtitle={newsletter.subtitle} center />
-        <Styled.Form name='contact-form' method='post' netlify-honeypot="bot-field" data-netlify="true" action='/'>
-          <input type="hidden" name="bot-field" />
+        <Styled.Form name='contact-form' method='post' action='/'>
+          <input type="hidden" name="form-name" value="contact-form" />
           <Styled.Input type="text" name='name' id='name' placeholder={newsletter.namePlaceholder} />
-          <Styled.Input type="email" name='email' id='email'placeholder={newsletter.emailPlaceholder} />
+          <Styled.Input type="email" name='email' id='email' placeholder={newsletter.emailPlaceholder} />
           <Styled.Input type="tel" name='phone' id='phone' placeholder={newsletter.phonePlaceholder} />
           <Styled.TextArea name='message' id='message' placeholder={newsletter.textPlaceholder} rows={5} />
           <Button primary type='submit'>
