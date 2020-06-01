@@ -39,7 +39,7 @@ const Newsletter: React.FC = () => {
     <Styled.Newsletter>
       <Container section>
         <TitleSection title={newsletter.title} subtitle={newsletter.subtitle} center />
-        <Styled.Form name='contact-form' method='post' netlify-honeypot="bot-field" data-netlify="true" action='#'>
+        <Styled.Form name='contact-form' method='post' netlify-honeypot="bot-field" data-netlify="true" action='/'>
           <input type="hidden" name="bot-field" />
           <Styled.Input type="text" placeholder={newsletter.namePlaceholder} />
           <Styled.Input type="email" placeholder={newsletter.emailPlaceholder} />
