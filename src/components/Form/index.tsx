@@ -41,10 +41,10 @@ const Newsletter: React.FC = () => {
         <TitleSection title={newsletter.title} subtitle={newsletter.subtitle} center />
         <Styled.Form name='contact-form' method='post' netlify-honeypot="bot-field" data-netlify="true" action='/'>
           <input type="hidden" name="bot-field" />
-          <Styled.Input type="text" placeholder={newsletter.namePlaceholder} />
-          <Styled.Input type="email" placeholder={newsletter.emailPlaceholder} />
-          <Styled.Input type="phone" placeholder={newsletter.phonePlaceholder} />
-          <Styled.TextArea placeholder={newsletter.textPlaceholder} rows={5} />
+          <Styled.Input type="text" name='name' id='name' placeholder={newsletter.namePlaceholder} />
+          <Styled.Input type="email" name='email' id='email'placeholder={newsletter.emailPlaceholder} />
+          <Styled.Input type="tel" name='phone' id='phone' placeholder={newsletter.phonePlaceholder} />
+          <Styled.TextArea name='message' id='message' placeholder={newsletter.textPlaceholder} rows={5} />
           <Button primary type='submit'>
             {newsletter.submitPlaceholder}
           </Button>
