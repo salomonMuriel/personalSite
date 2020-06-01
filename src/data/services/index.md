@@ -1,5 +1,5 @@
 ---
 category: 'services section'
-title: 'Services'
-subtitle: 'What I do'
+title: 'Consultancy'
+subtitle: 'What I can do for You'
 ---

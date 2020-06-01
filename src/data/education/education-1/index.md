@@ -1,9 +1,9 @@
 ---
 category: 'education'
-university: 'Columbia University'
-degree: 'Bachelor'
-startDate: 'Oct 2005'
-endDate: 'Jul 2008'
+university: 'Universidad de los Andes'
+degree: 'B.Sc. Economics'
+startDate: 'Jul 2008'
+endDate: 'Jul 2013'
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+I achieved the top score for the University's Economics program in the National Higher Education Assesment Test (Saber Pro), which is taken in the last year of studies. I took several Comp.Sci. courses to complement my studies.

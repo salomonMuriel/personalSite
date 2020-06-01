@@ -1,11 +1,9 @@
 ---
 category: 'experiences'
-company: 'Aizoon Reply'
-position: 'UI/UX Designer'
-startDate: 'Jan 2011'
-endDate: 'May 2013'
+company: 'PrestaGente.com'
+position: 'CEO & Founder'
+startDate: 'May 2017'
+endDate: 'Sep 2019'
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Create an online peer to peer lending company customized to the Colombian market and legislation, using Blockchain as a disruptive technology.

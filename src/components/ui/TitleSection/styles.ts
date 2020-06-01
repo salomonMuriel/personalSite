@@ -15,7 +15,7 @@ export const Title = styled.h2<StyledProps>`
 `;
 
 export const SubTitle = styled.h4<StyledProps>`
-  ${tw`text-xs text-indigo-600 w-full text-left`};
+  ${tw`text-xs text-indigo-500 w-full text-left`};
   ${({ center }) => center && tw`text-center`};
 `;
 

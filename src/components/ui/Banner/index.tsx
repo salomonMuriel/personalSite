@@ -18,22 +18,24 @@ interface Props {
   img: ImageSharpFluid;
 }
 
-const Banner: React.FC<Props> = ({ title, subtitle, content, linkTo, linkText, img }) => (
-  <Styled.Banner>
-    <Container section>
-      <LeftContent>
-        <TitleSection title={title} subtitle={subtitle} />
-        <Styled.Content>{content}
-        </Styled.Content>
-        <Link to={linkTo}>
-          <Button primary>{linkText}</Button>
-        </Link>
-      </LeftContent>
-      <Styled.Image>
-        <Img fluid={img} alt={title} />
-      </Styled.Image>
-    </Container>
-  </Styled.Banner>
-);
+const Banner: React.FC<Props> = ({ title, subtitle, content, linkTo, linkText, img }) => {
+  return (
+    <Styled.Banner>
+      <Container section>
+        <LeftContent>
+          <TitleSection title={title} subtitle={subtitle} />
+          <Styled.Content>{content}
+          </Styled.Content>
+          <Link to={linkTo}>
+            <Button primary>{linkText}</Button>
+          </Link>
+        </LeftContent>
+        <Styled.Image>
+          <Img fluid={img} alt={title} />
+        </Styled.Image>
+      </Container>
+    </Styled.Banner>
+  );
+}
 
 export default Banner;

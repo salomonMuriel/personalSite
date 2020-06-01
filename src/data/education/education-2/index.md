@@ -1,9 +1,9 @@
 ---
 category: 'education'
-university: 'Stanford University'
-degree: 'Master of Science'
-startDate: 'Oct 2008'
-endDate: 'Jul 2010'
+university: 'Universidad del Rosario'
+degree: 'Specialist in Project Evaluation'
+startDate: 'Jul 2014'
+endDate: 'Dec 2015'
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laborist.
+Specialization in Project Evaluation and Development, focused heavily on the financial aspects of project evaluation, while also reviewing project management and evaluation of environmental, social and public impact.

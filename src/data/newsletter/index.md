@@ -1,8 +1,9 @@
 ---
-category: 'newsletter section'
-title: 'Newsletter '
-subtitle: 'Subscribe to my mailing list'
-namePlaceholder: 'First Name'
+category: 'form section'
+title: 'Contact me!'
+subtitle: 'Tell me how I can help you.'
+namePlaceholder: 'Name'
 emailPlaceholder: 'Email'
-submitPlaceholder: 'Subscribe'
+submitPlaceholder: 'Send'
+textPlaceholder: 'Tell me how I can help you or your organization!'
 ---

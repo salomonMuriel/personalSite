@@ -17,7 +17,7 @@ interface Newsletter extends SectionTitle {
 const Newsletter: React.FC = () => {
   const { markdownRemark } = useStaticQuery(graphql`
     query {
-      markdownRemark(frontmatter: { category: { eq: "newsletter section" } }) {
+      markdownRemark(frontmatter: { category: { eq: "form section" } }) {
         frontmatter {
           title
           subtitle

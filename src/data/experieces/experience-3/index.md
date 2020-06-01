@@ -1,9 +1,10 @@
 ---
 category: 'experiences'
-company: 'Facebook'
-position: 'Frontend Developer'
-startDate: 'May 2013'
-endDate: 'Jun 2015'
+company: 'Beriblock.com'
+position: 'CEO & Founder'
+startDate: 'Oct 2018'
+endDate: 'Dec 2020'
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Authentication, tracking and certification service for documents and contracts through Blockchain technology.
+

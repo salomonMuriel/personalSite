@@ -1,9 +1,9 @@
 ---
 category: 'experiences'
-company: 'Netlify'
-position: 'Senior Frontend Developer'
-startDate: 'Jun 2015'
-endDate: 'Jan 2018'
+company: 'FINCO.co'
+position: 'CEO & Co-Founder'
+startDate: 'Jan 2020'
+endDate: 'Present'
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Valuation and Decision Making service for the Real Estate Market in Bogota, Colombia and LatAm, based on Big Data and AI (Deep Learning).

@@ -1,9 +1,9 @@
 ---
 category: 'experiences'
-company: 'Forge Inc'
-position: 'UI/UX Designer'
-startDate: 'Mar 2010'
-endDate: 'Dec 2010'
+company: 'ElPalomo.co'
+position: 'CEO & Founder'
+startDate: 'Dec 2016'
+endDate: 'Dec 2017'
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Online flower bouquet subscription service, focused on an 100% digital experience.
