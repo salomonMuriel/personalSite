@@ -7,6 +7,7 @@ import TitleSection from 'components/ui/TitleSection';
 import FormatHtml from 'components/utils/FormatHtml';
 
 import { SectionTitle } from 'helpers/definitions';
+import LangContext from 'context/LangContext';
 
 interface Experience {
   node: {
@@ -22,16 +23,39 @@ interface Experience {
 }
 
 const Experience: React.FC = () => {
-  const { markdownRemark, allMarkdownRemark } = useStaticQuery(graphql`
+  const { mR_es, aMR_es, mR_en, aMR_en } = useStaticQuery(graphql`
     query {
-      markdownRemark(frontmatter: { category: { eq: "experiences section" } }) {
+      mR_es: markdownRemark(frontmatter: { category: { eq: "experiences section" }, lang: { eq: "es" } }) {
         frontmatter {
           title
           subtitle
         }
       }
-      allMarkdownRemark(
-        filter: { frontmatter: { category: { eq: "experiences" } } }
+      aMR_es: allMarkdownRemark(
+        filter: { frontmatter: { category: { eq: "experiences" }, lang: { eq: "es" } } }
+        sort: { order: DESC, fields: fileAbsolutePath }
+      ) {
+        edges {
+          node {
+            id
+            html
+            frontmatter {
+              company
+              position
+              startDate
+              endDate
+            }
+          }
+        }
+      }
+      mR_en: markdownRemark(frontmatter: { category: { eq: "experiences section" }, lang: { eq: "en" } }) {
+        frontmatter {
+          title
+          subtitle
+        }
+      }
+      aMR_en: allMarkdownRemark(
+        filter: { frontmatter: { category: { eq: "experiences" }, lang: { eq: "en" } } }
         sort: { order: DESC, fields: fileAbsolutePath }
       ) {
         edges {
@@ -50,32 +74,46 @@ const Experience: React.FC = () => {
     }
   `);
 
-  const sectionTitle: SectionTitle = markdownRemark.frontmatter;
-  const experiences: Experience[] = allMarkdownRemark.edges;
+  const sectionTitle_es: SectionTitle = mR_es.frontmatter;
+  const experiences_es: Experience[] = aMR_es.edges;
+  const sectionTitle_en: SectionTitle = mR_en.frontmatter;
+  const experiences_en: Experience[] = aMR_en.edges;
 
   return (
-    <Container section>
-      <TitleSection title={sectionTitle.title} subtitle={sectionTitle.subtitle} />
-
-      {experiences.map((item) => {
-        const {
-          id,
-          html,
-          frontmatter: { company, position, startDate, endDate }
-        } = item.node;
-
+    <LangContext.Consumer>
+      {lang => {
+        if (lang.lang == 'es') {
+          var sectionTitle = sectionTitle_es
+          var experiences = experiences_es
+        }
+        else {
+          sectionTitle = sectionTitle_en
+          experiences = experiences_en
+        }
         return (
-          <Timeline
-            key={id}
-            title={company}
-            subtitle={position}
-            content={<FormatHtml content={html} />}
-            startDate={startDate}
-            endDate={endDate}
-          />
-        );
-      })}
-    </Container>
+          <Container section>
+            <TitleSection title={sectionTitle.title} subtitle={sectionTitle.subtitle} />
+            {experiences.map((item) => {
+              const {
+                id,
+                html,
+                frontmatter: { company, position, startDate, endDate }
+              } = item.node;
+              return (
+                <Timeline
+                  key={id}
+                  title={company}
+                  subtitle={position}
+                  content={<FormatHtml content={html} />}
+                  startDate={startDate}
+                  endDate={endDate}
+                />
+              );
+            })}
+          </Container>
+        )
+      }}
+    </LangContext.Consumer>
   );
 };
 

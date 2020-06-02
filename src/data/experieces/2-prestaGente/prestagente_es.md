@@ -7,4 +7,4 @@ endDate: 'Sep 2019'
 lang: 'es'
 ---
 
-Compañía de prestamos persona a persona en línea, ajustada al mercado y la legislación colombiana y utilizando Blokchain como tecnología disruptiva.
+Compañía de prestamos persona a persona en línea, ajustada al mercado y la legislación colombiana y utilizando Blockchain como tecnología disruptiva.

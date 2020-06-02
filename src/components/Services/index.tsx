@@ -9,6 +9,7 @@ import { IconProps } from 'components/ui/Icon';
 import { SectionTitle } from 'helpers/definitions';
 
 import * as Styled from './styles';
+import LangContext from 'context/LangContext';
 
 interface Service {
   node: {
@@ -22,15 +23,33 @@ interface Service {
 }
 
 const Services: React.FC = () => {
-  const { markdownRemark, allMarkdownRemark } = useStaticQuery(graphql`
+  const { mR_es, aMR_es, mR_en, aMR_en } = useStaticQuery(graphql`
     query {
-      markdownRemark(frontmatter: { category: { eq: "services section" } }) {
+      mR_es: markdownRemark(frontmatter: { category: { eq: "services section" }, lang: {eq: "es"} }) {
         frontmatter {
           title
           subtitle
         }
       }
-      allMarkdownRemark(filter: { frontmatter: { category: { eq: "services" } } }, sort: { fields: fileAbsolutePath }) {
+      aMR_es: allMarkdownRemark(filter: { frontmatter: { category: { eq: "services" }, lang: {eq: "es"} } }, sort: { fields: fileAbsolutePath }) {
+        edges {
+          node {
+            id
+            frontmatter {
+              title
+              icon
+              description
+            }
+          }
+        }
+      }
+      mR_en: markdownRemark(frontmatter: { category: { eq: "services section" }, lang: {eq: "en"} }) {
+        frontmatter {
+          title
+          subtitle
+        }
+      }
+      aMR_en: allMarkdownRemark(filter: { frontmatter: { category: { eq: "services" }, lang: {eq: "en"} } }, sort: { fields: fileAbsolutePath }) {
         edges {
           node {
             id
@@ -45,27 +64,44 @@ const Services: React.FC = () => {
     }
   `);
 
-  const sectionTitle: SectionTitle = markdownRemark.frontmatter;
-  const services: Service[] = allMarkdownRemark.edges;
+  const sectionTitle_es: SectionTitle = mR_es.frontmatter;
+  const services_es: Service[] = aMR_es.edges;
+  const sectionTitle_en: SectionTitle = mR_en.frontmatter;
+  const services_en: Service[] = aMR_en.edges;
 
   return (
-    <Container section>
-      <TitleSection title={sectionTitle.title} subtitle={sectionTitle.subtitle} center />
-      <Styled.Services>
-        {services.map((item) => {
-          const {
-            id,
-            frontmatter: { title, icon, description }
-          } = item.node;
+    <LangContext.Consumer>
+      {lang => {
+        if (lang.lang == 'es') {
+          var sectionTitle = sectionTitle_es
+          var services = services_es
+        }
+        else {
+          sectionTitle = sectionTitle_en
+          services = services_en
+        }
+        return (
+          <Container section>
+            <TitleSection title={sectionTitle.title} subtitle={sectionTitle.subtitle} center />
+            <Styled.Services>
+              {services.map((item) => {
+                const {
+                  id,
+                  frontmatter: { title, icon, description }
+                } = item.node;
 
-          return (
-            <Styled.ServiceItem key={id}>
-              <InfoBlock icon={icon} title={title} content={description} />
-            </Styled.ServiceItem>
-          );
-        })}
-      </Styled.Services>
-    </Container>
+                return (
+                  <Styled.ServiceItem key={id}>
+                    <InfoBlock icon={icon} title={title} content={description} />
+                  </Styled.ServiceItem>
+                );
+              })}
+            </Styled.Services>
+          </Container>
+        )
+      }
+      }
+    </LangContext.Consumer>
   );
 };
 

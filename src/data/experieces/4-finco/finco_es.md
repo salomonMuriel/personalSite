@@ -3,7 +3,7 @@ category: 'experiences'
 company: 'FINCO.co'
 position: 'Gerente & Co-Fundador'
 startDate: 'Ene 2020'
-endDate: 'Present'
+endDate: 'Presente'
 lang: 'es'
 ---
 

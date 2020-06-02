@@ -7,6 +7,7 @@ import TitleSection from 'components/ui/TitleSection';
 import FormatHtml from 'components/utils/FormatHtml';
 
 import { SectionTitle } from 'helpers/definitions';
+import LangContext from 'context/LangContext';
 
 interface Education {
   node: {
@@ -22,16 +23,39 @@ interface Education {
 }
 
 const Education: React.FC = () => {
-  const { markdownRemark, allMarkdownRemark } = useStaticQuery(graphql`
+  const { mR_es, aMR_es, mR_en, aMR_en } = useStaticQuery(graphql`
     query {
-      markdownRemark(frontmatter: { category: { eq: "education section" } }) {
+      mR_es: markdownRemark(frontmatter: { category: { eq: "education section" }, lang: { eq: "es" } }) {
         frontmatter {
           title
           subtitle
         }
       }
-      allMarkdownRemark(
-        filter: { frontmatter: { category: { eq: "education" } } }
+      aMR_es: allMarkdownRemark(
+        filter: { frontmatter: { category: { eq: "education" }, lang: { eq: "es" } } }
+        sort: { order: DESC, fields: fileAbsolutePath }
+      ) {
+        edges {
+          node {
+            id
+            html
+            frontmatter {
+              university
+              degree
+              startDate
+              endDate
+            }
+          }
+        }
+      }
+      mR_en: markdownRemark(frontmatter: { category: { eq: "education section" }, lang: { eq: "en" } }) {
+        frontmatter {
+          title
+          subtitle
+        }
+      }
+      aMR_en: allMarkdownRemark(
+        filter: { frontmatter: { category: { eq: "education" }, lang: { eq: "en" } } }
         sort: { order: DESC, fields: fileAbsolutePath }
       ) {
         edges {
@@ -50,34 +74,50 @@ const Education: React.FC = () => {
     }
   `);
 
-  const sectionTitle: SectionTitle = markdownRemark.frontmatter;
-  const education: Education[] = allMarkdownRemark.edges;
+  const sectionTitle_es: SectionTitle = mR_es.frontmatter;
+  const education_es: Education[] = aMR_es.edges;
+  const sectionTitle_en: SectionTitle = mR_en.frontmatter;
+  const education_en: Education[] = aMR_en.edges;
 
   return (
-    <Styled.Banner>
-      <Styled.Container>
-        <TitleSection title={sectionTitle.title} subtitle={sectionTitle.subtitle} />
+    <LangContext.Consumer>
+      {lang => {
+        if (lang.lang == 'es') {
+          var sectionTitle = sectionTitle_es
+          var education = education_es
+        }
+        else {
+          sectionTitle = sectionTitle_en
+          education = education_en
+        }
+        return (
+          <Styled.Banner>
+            <Styled.Container>
+              <TitleSection title={sectionTitle.title} subtitle={sectionTitle.subtitle} />
 
-        {education.map((item) => {
-          const {
-            id,
-            html,
-            frontmatter: { university, degree, startDate, endDate }
-          } = item.node;
+              {education.map((item) => {
+                const {
+                  id,
+                  html,
+                  frontmatter: { university, degree, startDate, endDate }
+                } = item.node;
 
-          return (
-            <Timeline
-              key={id}
-              title={university}
-              subtitle={degree}
-              content={<FormatHtml content={html} />}
-              startDate={startDate}
-              endDate={endDate}
-            />
-          );
-        })}
-      </Styled.Container>
-    </Styled.Banner>
+                return (
+                  <Timeline
+                    key={id}
+                    title={university}
+                    subtitle={degree}
+                    content={<FormatHtml content={html} />}
+                    startDate={startDate}
+                    endDate={endDate}
+                  />
+                );
+              })}
+            </Styled.Container>
+          </Styled.Banner>
+        )
+      }}
+    </LangContext.Consumer>
   );
 };
 

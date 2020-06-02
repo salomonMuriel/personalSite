@@ -8,6 +8,7 @@ import ProgressBar from 'components/ui/ProgressBar';
 import { SectionTitle } from 'helpers/definitions';
 
 import * as Styled from './styles';
+import LangContext from 'context/LangContext';
 
 interface Skill {
   node: {
@@ -20,15 +21,15 @@ interface Skill {
 }
 
 const Skills: React.FC = () => {
-  const { markdownRemark, allMarkdownRemark } = useStaticQuery(graphql`
+  const { mR_es, aMR, mR_en } = useStaticQuery(graphql`
     query {
-      markdownRemark(frontmatter: { category: { eq: "skills section" } }) {
+      mR_es: markdownRemark(frontmatter: { category: { eq: "skills section" }, lang: { eq: "es" } }) {
         frontmatter {
           title
           subtitle
         }
       }
-      allMarkdownRemark(filter: { frontmatter: { category: { eq: "skills" } } }, sort: { fields: fileAbsolutePath }) {
+      aMR: allMarkdownRemark(filter: { frontmatter: { category: { eq: "skills" } } }, sort: { fields: fileAbsolutePath }) {
         edges {
           node {
             id
@@ -39,30 +40,49 @@ const Skills: React.FC = () => {
           }
         }
       }
+      mR_en: markdownRemark(frontmatter: { category: { eq: "skills section" }, lang: { eq: "en" } }) {
+        frontmatter {
+          title
+          subtitle
+        }
+      }
     }
   `);
 
-  const sectionTitle: SectionTitle = markdownRemark.frontmatter;
-  const skills: Skill[] = allMarkdownRemark.edges;
+  const sectionTitle_es: SectionTitle = mR_es.frontmatter;
+  const sectionTitle_en: SectionTitle = mR_en.frontmatter;
+  const skills: Skill[] = aMR.edges;
 
   return (
-    <Container section>
-      <TitleSection title={sectionTitle.title} subtitle={sectionTitle.subtitle} center />
-      <Styled.Skills>
-        {skills.map((item) => {
-          const {
-            id,
-            frontmatter: { title, percentage }
-          } = item.node;
+    <LangContext.Consumer>
+      {lang => {
+        if (lang.lang == 'es') {
+          var sectionTitle = sectionTitle_es
+        }
+        else {
+          sectionTitle = sectionTitle_en
+        }
+        return (
+          <Container section>
+            <TitleSection title={sectionTitle.title} subtitle={sectionTitle.subtitle} center />
+            <Styled.Skills>
+              {skills.map((item) => {
+                const {
+                  id,
+                  frontmatter: { title, percentage }
+                } = item.node;
 
-          return (
-            <Styled.Skill key={id}>
-              <ProgressBar title={title} percentage={percentage} />
-            </Styled.Skill>
-          );
-        })}
-      </Styled.Skills>
-    </Container>
+                return (
+                  <Styled.Skill key={id}>
+                    <ProgressBar title={title} percentage={percentage} />
+                  </Styled.Skill>
+                );
+              })}
+            </Styled.Skills>
+          </Container>
+        )
+      }}
+    </LangContext.Consumer>
   );
 };
 

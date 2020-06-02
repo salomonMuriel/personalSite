@@ -10,6 +10,7 @@ import { SectionTitle } from 'helpers/definitions';
 
 import * as Styled from './styles';
 import Newsletter from 'components/Form';
+import LangContext from 'context/LangContext';
 
 
 interface Contact {
@@ -24,15 +25,33 @@ interface Contact {
 }
 
 const ConctactInfo: React.FC = () => {
-  const { markdownRemark, allMarkdownRemark } = useStaticQuery(graphql`
+  const { mR_es, aMR_es, mR_en, aMR_en } = useStaticQuery(graphql`
     query {
-      markdownRemark(frontmatter: { category: { eq: "contact section" } }) {
+      mR_es: markdownRemark(frontmatter: { category: { eq: "contact section" }, lang: { eq: "es" } }) {
         frontmatter {
           title
           subtitle
         }
       }
-      allMarkdownRemark(filter: { frontmatter: { category: { eq: "contact" } } }, sort: { fields: fileAbsolutePath }) {
+      aMR_es: allMarkdownRemark(filter: { frontmatter: { category: { eq: "contact" }, lang: { eq: "es" } } }, sort: { fields: fileAbsolutePath }) {
+        edges {
+          node {
+            id
+            frontmatter {
+              title
+              icon
+              content
+            }
+          }
+        }
+      }
+      mR_en: markdownRemark(frontmatter: { category: { eq: "contact section" }, lang: { eq: "en" } }) {
+        frontmatter {
+          title
+          subtitle
+        }
+      }
+      aMR_en: allMarkdownRemark(filter: { frontmatter: { category: { eq: "contact" }, lang: { eq: "en" } } }, sort: { fields: fileAbsolutePath }) {
         edges {
           node {
             id
@@ -47,28 +66,44 @@ const ConctactInfo: React.FC = () => {
     }
   `);
 
-  const sectionTitle: SectionTitle = markdownRemark.frontmatter;
-  const contacts: Contact[] = allMarkdownRemark.edges;
+  const sectionTitle_es: SectionTitle = mR_es.frontmatter;
+  const contacts_es: Contact[] = aMR_es.edges;
+  const sectionTitle_en: SectionTitle = mR_en.frontmatter;
+  const contacts_en: Contact[] = aMR_en.edges;
 
   return (
-    <div>
-      <Container section>
-        <TitleSection title={sectionTitle.title} subtitle={sectionTitle.subtitle} center />
-        {contacts.map((item) => {
-          const {
-            id,
-            frontmatter: { title, icon, content }
-          } = item.node;
+    <LangContext.Consumer>
+      {lang => {
+        if (lang.lang == 'es') {
+          var sectionTitle = sectionTitle_es
+          var contacts = contacts_es
+        }
+        else {
+          sectionTitle = sectionTitle_en
+          contacts = contacts_en
+        }
+        return (
+          <div>
+            <Container section>
+              <TitleSection title={sectionTitle.title} subtitle={sectionTitle.subtitle} center />
+              {contacts.map((item) => {
+                const {
+                  id,
+                  frontmatter: { title, icon, content }
+                } = item.node;
 
-          return (
-            <Styled.ContactInfoItem key={id}>
-              <InfoBlock icon={icon} title={title} content={content} center />
-            </Styled.ContactInfoItem>
-          );
-        })}
-      </Container>
-      <Newsletter />
-    </div>
+                return (
+                  <Styled.ContactInfoItem key={id}>
+                    <InfoBlock icon={icon} title={title} content={content} center />
+                  </Styled.ContactInfoItem>
+                );
+              })}
+            </Container>
+            <Newsletter />
+          </div>
+        )
+      }}
+    </LangContext.Consumer>
   );
 };
 
