@@ -80,5 +80,22 @@ module.exports = {
         generateMatchPathRewrites: true, // boolean to turn off automatic creation of redirect rules for client only paths
       },
     },
+    {
+      resolve: `gatsby-plugin-gtag`,
+      options: {
+        // your google analytics tracking id
+        trackingId: `UA-168246088-1`,
+        // Puts tracking script in the head instead of the body
+        head: true,
+        // enable ip anonymization
+        anonymize: false,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-fullstory`,
+      options: {
+        fs_org: 'VMFR0',
+      },
+    },
   ]
 };
