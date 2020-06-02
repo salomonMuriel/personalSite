@@ -4,22 +4,23 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 type Meta =
   | {
-      name: string;
-      content: any;
-    }
+    name: string;
+    content: any;
+  }
   | {
-      property: string;
-      content: any;
-    };
+    property: string;
+    content: any;
+  };
 
 interface Props {
   description?: string;
   lang?: string;
   meta?: Meta[];
   title: string;
+  image?: string;
 }
 
-const SEO: React.FC<Props> = ({ description, lang, meta, title }) => {
+const SEO: React.FC<Props> = ({ description, lang, meta, title, image }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -28,6 +29,8 @@ const SEO: React.FC<Props> = ({ description, lang, meta, title }) => {
             title
             description
             author
+            image
+            url
           }
         }
       }
@@ -35,7 +38,8 @@ const SEO: React.FC<Props> = ({ description, lang, meta, title }) => {
   );
 
   const metaDescription = description || site.siteMetadata.description;
-
+  const metaImage = image || site.siteMetadata.image;
+  console.log(site.siteMetadata.url + metaImage)
   return (
     <Helmet
       htmlAttributes={{
@@ -55,6 +59,10 @@ const SEO: React.FC<Props> = ({ description, lang, meta, title }) => {
         {
           property: `og:description`,
           content: metaDescription
+        },
+        {
+          property: `og:image`,
+          content: site.siteMetadata.url + metaImage
         },
         {
           property: `og:type`,
@@ -82,7 +90,7 @@ const SEO: React.FC<Props> = ({ description, lang, meta, title }) => {
 };
 
 SEO.defaultProps = {
-  lang: `en`,
+  lang: `es`,
   meta: [] as Meta[],
   description: ``
 };

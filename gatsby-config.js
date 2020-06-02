@@ -1,8 +1,10 @@
 module.exports = {
   siteMetadata: {
     title: `Salomon Muriel - Data Scientist`,
-    description: `Personal Site`,
-    author: `Salomon`
+    description: `Consultor en inteligencia de datos, transformación digital, emprendimiento y nuevas tecnologías`,
+    author: `Salomon`,
+    url: "https://www.salomonmuriel.com",
+    image: "/images/salomonSEO.jpeg",
   },
   plugins: [
     `gatsby-plugin-typescript`,
