@@ -69,9 +69,10 @@ const ContactForm: React.FC = () => {
             <Container section>
               <TitleSection title={newsletter.title} subtitle={newsletter.subtitle} center />
               <Styled.Form name='contact-form' action='https://submit-form.com/y70ue80Sl0LbRwETYv0LI'>
-                <input type="hidden" name="_feedback.success.title" value={newsletter.thankYouTitle}/>
-                <input type="hidden" name="_feedback.success.message" value={newsletter.thankYouMessage}/>
-                <input type="hidden" name="_feedback.language" value={lang.lang}/>
+                <input type="checkbox" name="_honeypot" hidden autoComplete='off' />
+                <input type="hidden" name="_feedback.success.title" value={newsletter.thankYouTitle} />
+                <input type="hidden" name="_feedback.success.message" value={newsletter.thankYouMessage} />
+                <input type="hidden" name="_feedback.language" value={lang.lang} />
                 <Styled.Input type="text" name='name' id='name' placeholder={newsletter.namePlaceholder} />
                 <Styled.Input type="email" name='email' id='email' placeholder={newsletter.emailPlaceholder} />
                 <Styled.Input type="tel" name='phone' id='phone' placeholder={newsletter.phonePlaceholder} />
