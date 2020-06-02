@@ -17,5 +17,5 @@ export const Flag = styled(Link)`
 `;
 
 export const Img = motion.custom(styled.figure`
-${tw`w-10 h-10 mr-3 border border-teal-400 rounded-full`};
+${tw`w-8 h-8 mr-3 border border-teal-400 rounded-full`};
 `);
