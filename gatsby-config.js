@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Salomon Muriel - Data Scientist`,
-    description: `Consultor en inteligencia de datos, transformación digital, emprendimiento y nuevas tecnologías`,
+    description: `Emprendedor en serie y Consultor en inteligencia de datos, transformación digital, emprendimiento y nuevas tecnologías`,
     author: `Salomon`,
     url: "https://www.salomonmuriel.com",
     image: "/images/salomonSEO.jpeg",

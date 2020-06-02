@@ -39,7 +39,6 @@ const SEO: React.FC<Props> = ({ description, lang, meta, title, image }) => {
 
   const metaDescription = description || site.siteMetadata.description;
   const metaImage = image || site.siteMetadata.image;
-  console.log(site.siteMetadata.url + metaImage)
   return (
     <Helmet
       htmlAttributes={{
