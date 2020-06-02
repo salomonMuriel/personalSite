@@ -6,7 +6,7 @@ import Container from 'components/ui/Container';
 import TitleSection from 'components/ui/TitleSection';
 
 const NotFoundPage: React.FC = () => (
-  <Layout>
+  < Layout >
     <SEO title="404: Not found" />
     <Container section>
       <TitleSection title="404" subtitle="Page not found" center />

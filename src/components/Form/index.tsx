@@ -15,6 +15,8 @@ interface Form extends SectionTitle {
   textPlaceholder: string;
   submitPlaceholder: string;
   phonePlaceholder: string;
+  thankYouTitle: string;
+  thankYouMessage: string;
 }
 
 
@@ -31,6 +33,8 @@ const ContactForm: React.FC = () => {
           textPlaceholder
           phonePlaceholder
           submitPlaceholder
+          thankYouTitle
+          thankYouMessage
         }
       }
       markdownRemark_en: markdownRemark(frontmatter: { category: { eq: "form section" }, lang: {eq: "en"} }) {
@@ -42,6 +46,8 @@ const ContactForm: React.FC = () => {
           textPlaceholder
           phonePlaceholder
           submitPlaceholder
+          thankYouTitle
+          thankYouMessage
         }
       }
     }
@@ -62,9 +68,10 @@ const ContactForm: React.FC = () => {
           <Styled.Newsletter>
             <Container section>
               <TitleSection title={newsletter.title} subtitle={newsletter.subtitle} center />
-              <Styled.Form name='contact-form' method='post' action='/' data-netlify={true} data-netlify-honeypot="bot-field" ref={createRef}>
-                <input type="hidden" name="form-name" value="contact-form" />
-                <input type="text" hidden name="bot-field"/>
+              <Styled.Form name='contact-form' action='https://submit-form.com/y70ue80Sl0LbRwETYv0LI'>
+                <input type="hidden" name="_feedback.success.title" value={newsletter.thankYouTitle}/>
+                <input type="hidden" name="_feedback.success.message" value={newsletter.thankYouMessage}/>
+                <input type="hidden" name="_feedback.language" value={lang.lang}/>
                 <Styled.Input type="text" name='name' id='name' placeholder={newsletter.namePlaceholder} />
                 <Styled.Input type="email" name='email' id='email' placeholder={newsletter.emailPlaceholder} />
                 <Styled.Input type="tel" name='phone' id='phone' placeholder={newsletter.phonePlaceholder} />
@@ -77,7 +84,7 @@ const ContactForm: React.FC = () => {
           </Styled.Newsletter>
         )
       }
-    }
+      }
     </LangContext.Consumer>
   );
 };

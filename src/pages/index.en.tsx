@@ -6,20 +6,27 @@ import HeroBanner from 'components/HeroBanner';
 import Services from 'components/Services';
 import News from 'components/News';
 import Newsletter from 'components/Form';
+import LangContext from 'context/LangContext';
 
 const IndexPage: React.FC = () => {
-  const LangContext = React.createContext('es');
   return (
-    <LangContext.Provider value='es'>
-      <Layout>
-        <SEO title="About me" />
-        <HeroBanner />
-        <Services />
-        <hr />
-        <Newsletter />
-        {/* <News /> */}
-      </Layout>
-    </LangContext.Provider>
+    <LangContext.Consumer>
+      {lang => {
+        if (lang.lang !== 'en') {
+          lang.changeLang('en')
+        }
+        return (
+          <Layout>
+            <SEO title="About me" />
+            <HeroBanner />
+            <Services />
+            <hr />
+            <Newsletter />
+            {/* <News /> */}
+          </Layout>
+        )
+      }}
+    </LangContext.Consumer >
   );
 };
 
