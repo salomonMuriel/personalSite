@@ -11,6 +11,7 @@ import { SectionTitle } from 'helpers/definitions';
 import * as Styled from './styles';
 import Newsletter from 'components/Form';
 
+
 interface Contact {
   node: {
     id: string;
