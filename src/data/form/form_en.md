@@ -1,7 +1,7 @@
 ---
 category: 'form section'
 title: 'Lets talk!'
-subtitle: 'Tell me how I can help you.'
+subtitle: 'Tell me how I can help.'
 namePlaceholder: 'Name'
 emailPlaceholder: 'Email'
 phonePlaceholder: 'Cellphone'

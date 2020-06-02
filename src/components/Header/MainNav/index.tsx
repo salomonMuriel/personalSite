@@ -8,7 +8,7 @@ interface MainNavItem {
   slug: string;
 }
 
-const mainNavItems: MainNavItem[] = [
+const mainNavItems_en: MainNavItem[] = [
   {
     title: 'About Me',
     slug: '/'
@@ -27,6 +27,25 @@ const mainNavItems: MainNavItem[] = [
   }
 ];
 
+const mainNavItems_es: MainNavItem[] = [
+  {
+    title: 'Acerca de mí',
+    slug: '/'
+  },
+  {
+    title: 'Perfil',
+    slug: '/resume/'
+  },
+  // {
+  //   title: 'Blog',
+  //   slug: '/blog/'
+  // },
+  {
+    title: 'Contacto',
+    slug: '/contact/'
+  }
+];
+
 const MainNav: React.FC = () => {
   const [open, setOpen] = useState(false);
 
@@ -35,7 +54,8 @@ const MainNav: React.FC = () => {
       {lang =>
       <>
         <Styled.MainNav open={open}>
-          {mainNavItems.map((item, index) => (
+          {(lang.lang=='es')?
+          mainNavItems_es.map((item, index) => (
             <Styled.MainNavItem
               key={`nav-item-${index}`}
               to={'/'+lang.lang+item.slug}
@@ -44,7 +64,18 @@ const MainNav: React.FC = () => {
             >
               {item.title}
             </Styled.MainNavItem>
-          ))}
+          )):
+          mainNavItems_en.map((item, index) => (
+            <Styled.MainNavItem
+              key={`nav-item-${index}`}
+              to={'/'+lang.lang+item.slug}
+              activeClassName="active"
+              whileTap={{ scale: 0.9 }}
+            >
+              {item.title}
+            </Styled.MainNavItem>
+          ))
+          }
         </Styled.MainNav>
         <Styled.ToogleMainNav open={open} onClick={() => setOpen(!open)}>
           <span />

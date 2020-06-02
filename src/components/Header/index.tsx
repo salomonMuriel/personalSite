@@ -43,12 +43,12 @@ const Header: React.FC<Props> = ({ siteTitle }) => {
         <Styled.Header>
           <Styled.Wrapper>
             <Logo />
-              <Styled.Flag to={'/' + 'es' + location.pathname.substring(3)} onClick={lang.changeLang}>
+              <Styled.Flag to={'/' + 'es' + location.pathname.substring(3)}  onClick={() => lang.changeLang('es')}>
                 <Styled.Img>
                   <Img fluid={colombiaFlagFluid} title='Cambiar a Español' />
                 </Styled.Img>
               </Styled.Flag>
-              <Styled.Flag to={'/' + 'en' + location.pathname.substring(3)} onClick={lang.changeLang}>
+              <Styled.Flag to={'/' + 'en' + location.pathname.substring(3)} onClick={() => lang.changeLang('en')}>
                 <Styled.Img>
                   <Img fluid={usaFlagFluid} title='Switch to English' />
                 </Styled.Img>
