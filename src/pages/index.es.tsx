@@ -8,26 +8,15 @@ import News from 'components/News';
 import Newsletter from 'components/Form';
 import LangContext from 'context/LangContext';
 
-const IndexPage: React.FC = () => {
-  return (
-    <LangContext.Consumer>
-      {lang => {
-        if (lang.lang !== 'es') {
-          lang.changeLang('es')
-        }
-        return (
-          <Layout>
-            <SEO title="Acerca de mí" />
-            <HeroBanner />
-            <Services />
-            <hr />
-            <Newsletter />
-            {/* <News /> */}
-          </Layout>
-        )
-      }}
-    </LangContext.Consumer >
-  );
-};
+const IndexPage: React.FC = () => (
+  <Layout>
+    <SEO title="Acerca de mí" />
+    <HeroBanner />
+    <Services />
+    <hr />
+    <Newsletter />
+    {/* <News /> */}
+  </Layout>
+);
 
 export default IndexPage;
