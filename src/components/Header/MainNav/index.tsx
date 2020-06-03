@@ -17,10 +17,10 @@ const mainNavItems_en: MainNavItem[] = [
     title: 'Resume',
     slug: '/resume/'
   },
-  // {
-  //   title: 'Blog',
-  //   slug: '/blog/'
-  // },
+  {
+    title: 'Blog',
+    slug: '/blog/'
+  },
   {
     title: 'Contact Me',
     slug: '/contact/'
