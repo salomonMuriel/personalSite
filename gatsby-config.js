@@ -5,7 +5,7 @@ module.exports = {
     description_en: `Serial Entrepreneur and Consultant in Data Intelligence, digital transformation, entrepreneurship and novel technology`,
     author: `Salomon`,
     url: "https://www.salomonmuriel.com",
-    image: "/images/salomonSEO.jpeg",
+    image: "/images/salomonSEO.jpg",
   },
   plugins: [
     `gatsby-plugin-typescript`,
