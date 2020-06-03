@@ -20,10 +20,8 @@ interface Post {
     title: string;
     date: string;
     langKey: string;
-    cover: {
-      relativePath: string;
-      absolutePath: string;
-    }
+    description: string;
+    static_image: string;
   };
 }
 
@@ -41,10 +39,9 @@ interface Props {
 const BlogPost: React.FC<Props> = ({ data, pageContext }) => {
   const post = data.markdownRemark;
   const { previous, next } = pageContext;
-  console.log(post.frontmatter.cover.absolutePath)
   return (
     <Layout>
-      <SEO title={post.frontmatter.title} lang={post.frontmatter.langKey} />
+      <SEO title={post.frontmatter.title} lang={post.frontmatter.langKey} description={post.frontmatter.description} image={post.frontmatter.static_image}/>
       <Styled.Banner>
         <Styled.PostContainer section>
         <TitleSection title={post.frontmatter.date} subtitle={post.frontmatter.title} />
@@ -81,10 +78,7 @@ export const query = graphql`
         title
         description
         langKey
-        cover {
-          relativePath
-          absolutePath
-        }
+        static_image
         date(formatString: "MMM DD, YYYY")
       }
     }

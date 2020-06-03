@@ -1,8 +1,9 @@
 ---
 category: 'blog'
-cover: './cover.png'
+cover: './001.png'
+static_image: '/images/001.png'
 title: 'Desmitificando la Ciencia de Datos'
-description: ''
+description: 'Los datos y la tecnología son la base de una organización competitiva. Entonces, ¿por qué se malentiende la Ciencia de Datos?'
 date: '2020-06-03'
 langKey: 'es'
 tags: ['Inteligencia de Datos','Ciencia de Datos', 'Data Intelligence','Data Science']
@@ -17,7 +18,7 @@ Durante toda mi experiencia profesional me he dedicado de una manera u otra a ma
 
 En muchas ocasiones me encontré con que ese rol y esa labor en general eran más bien poco entendidos, y a veces hasta ignorados. En el afán de cada día de cualquier empresa, los procesos misionales tienden a tomar una relevancia desmedida por su naturaleza inmediata, y aquellos menos urgentes dan un paso atrás en el escalafón de relevancia. Muchas fueron las ocasiones donde mis compañeros, jefes (¡o yo mismo!) ignorábamos los datos que teníamos en frente y tomábamos decisiones con el corazón, el estómago o hasta la cabeza si teníamos suerte, pero sin los datos, y sin los datos no hay órgano que le atine.
 
-![¿Cómo funciona esa magia?](./cover.png)
+![¿Cómo funciona esa magia?](./001.png)
 
 Por esa misma causa también caemos en dejar toda mejoría tecnológica para el futuro (no tan) cercano. Recuerdo aún cuando la cara que me hicieron cuando sugerí cambiar el viejo Excel por Python para hacer mis labores en uno de mis primeros trabajos. ¿Quien tiene tiempo para eso?, ¿No había que hacer la presentación para el equipo de Mercadeo? ¿Que carajos es _Python_? Y así, muchas organizaciones dejan pasar los días, dejando la modernización para mañana. Seguro todos hemos participado de esta procastrinación particular: aún sabiendo que el mundo avanza tan rápido, dejar nuestro afán de alcanzarlo para después. Para ahorita hay otras cosas.
 
