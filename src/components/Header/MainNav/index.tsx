@@ -36,10 +36,10 @@ const mainNavItems_es: MainNavItem[] = [
     title: 'Perfil',
     slug: '/resume/'
   },
-  // {
-  //   title: 'Blog',
-  //   slug: '/blog/'
-  // },
+  {
+    title: 'Blog',
+    slug: '/blog/'
+  },
   {
     title: 'Contacto',
     slug: '/contact/'

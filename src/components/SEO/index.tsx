@@ -44,7 +44,6 @@ const SEO: React.FC<Props> = ({ description, lang, meta, title, image }) => {
   else {
     metaDescription = description || site.siteMetadata.description_es;
   }
-  console.log(metaDescription)
   const metaImage = image || site.siteMetadata.image;
   return (
     <Helmet
