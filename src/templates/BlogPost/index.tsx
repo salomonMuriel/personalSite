@@ -22,6 +22,7 @@ interface Post {
     langKey: string;
     cover: {
       relativePath: string;
+      absolutePath: string;
     }
   };
 }
@@ -40,7 +41,7 @@ interface Props {
 const BlogPost: React.FC<Props> = ({ data, pageContext }) => {
   const post = data.markdownRemark;
   const { previous, next } = pageContext;
-  console.log(post.frontmatter.cover.relativePath)
+  console.log(post.frontmatter.cover.absolutePath)
   return (
     <Layout>
       <SEO title={post.frontmatter.title} lang={post.frontmatter.langKey} />
@@ -82,6 +83,7 @@ export const query = graphql`
         langKey
         cover {
           relativePath
+          absolutePath
         }
         date(formatString: "MMM DD, YYYY")
       }
