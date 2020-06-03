@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import tw from 'tailwind.macro';
 
 export const Banner = styled.section`
-  ${tw`bg-gray-200 border-b border-indigo-100 text-blue-900 `};
+  ${tw`bg-gray-200 border-b border-indigo-100 text-blue-900`};
 `;
 
 export const Content = styled.p`

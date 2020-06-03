@@ -9,6 +9,7 @@ import TitleSection from 'components/ui/TitleSection';
 import FormatHtml from 'components/utils/FormatHtml';
 
 import * as Styled from './styles';
+import { Post } from 'components/Posts/styles';
 
 interface Post {
   html: React.ReactNode;
@@ -18,6 +19,10 @@ interface Post {
   frontmatter: {
     title: string;
     date: string;
+    langKey: string;
+    cover: {
+      relativePath: string;
+    }
   };
 }
 
@@ -35,30 +40,32 @@ interface Props {
 const BlogPost: React.FC<Props> = ({ data, pageContext }) => {
   const post = data.markdownRemark;
   const { previous, next } = pageContext;
-
+  console.log(post.frontmatter.cover.relativePath)
   return (
     <Layout>
-      <SEO title={post.frontmatter.title} />
-      <Container section>
+      <SEO title={post.frontmatter.title} lang={post.frontmatter.langKey} />
+      <Styled.Banner>
+        <Styled.PostContainer section>
         <TitleSection title={post.frontmatter.date} subtitle={post.frontmatter.title} />
-        <FormatHtml content={post.html} />
-        <Styled.Links>
-          <span>
-            {previous && (
-              <Link to={previous.fields.slug} rel="previous">
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </span>
-          <span>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </span>
-        </Styled.Links>
-      </Container>
+          <FormatHtml content={post.html} />
+          <Styled.Links>
+            <span>
+              {previous && (
+                <Link to={previous.fields.slug} rel="previous">
+                  ← {previous.frontmatter.title}
+                </Link>
+              )}
+            </span>
+            <span>
+              {next && (
+                <Link to={next.fields.slug} rel="next">
+                  {next.frontmatter.title} →
+                </Link>
+              )}
+            </span>
+          </Styled.Links>
+        </Styled.PostContainer>
+      </Styled.Banner>
     </Layout>
   );
 };
@@ -71,6 +78,11 @@ export const query = graphql`
       html
       frontmatter {
         title
+        description
+        langKey
+        cover {
+          relativePath
+        }
         date(formatString: "MMM DD, YYYY")
       }
     }
