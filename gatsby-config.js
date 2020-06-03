@@ -100,5 +100,11 @@ module.exports = {
         fs_org: 'VMFR0',
       },
     },
+    {
+      resolve: "gatsby-plugin-typography",
+      options: {
+        pathToConfigModule: "src/utils/typography.js"
+      }
+    }
   ]
 };

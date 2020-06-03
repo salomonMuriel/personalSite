@@ -78,7 +78,7 @@ const Posts: React.FC = () => {
   `);
 
   const sectionTitle_es: SectionTitle = mR_es.frontmatter;
-  const sectionTitle_en: SectionTitle = mR_es.frontmatter;
+  const sectionTitle_en: SectionTitle = mR_en.frontmatter;
   const posts: Post[] = allMarkdownRemark.edges;
 
   return (

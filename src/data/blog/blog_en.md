@@ -1,6 +1,6 @@
 ---
 category: 'blog section'
 title: 'Blog'
-subtitle: 'All my posts'
+subtitle: 'Tech, data and other thoughts.'
 lang: 'en'
 ---
