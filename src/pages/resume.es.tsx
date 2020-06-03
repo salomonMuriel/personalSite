@@ -8,7 +8,7 @@ import Skills from 'components/Skills';
 
 const ResumePage: React.FC = () => (
   <Layout>
-    <SEO title="Perfil" />
+    <SEO title="Perfil" lang='es'/>
     <Experience />
     <hr />
     <Education />

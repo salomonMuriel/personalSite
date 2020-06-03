@@ -7,7 +7,7 @@ import ContactInfo from 'components/ContactInfo';
 const ContactPage: React.FC = () => {
   return (
     <Layout>
-      <SEO title="Contact" />
+      <SEO title="Contact" lang='en' />
       <ContactInfo />
     </Layout>
   );

@@ -7,7 +7,7 @@ import TitleSection from 'components/ui/TitleSection';
 
 const NotFoundPage: React.FC = () => (
   < Layout >
-    <SEO title="404: Not found" />
+    <SEO title="404: Not found" lang='en'/>
     <Container section>
       <TitleSection title="404" subtitle="Page not found" center />
       <p className="mt-4 text-center w-full">This doesn't exist yet! How did you get here?</p>

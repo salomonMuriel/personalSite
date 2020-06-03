@@ -27,7 +27,8 @@ const SEO: React.FC<Props> = ({ description, lang, meta, title, image }) => {
         site {
           siteMetadata {
             title
-            description
+            description_es
+            description_en
             author
             image
             url
@@ -36,8 +37,14 @@ const SEO: React.FC<Props> = ({ description, lang, meta, title, image }) => {
       }
     `
   );
-
-  const metaDescription = description || site.siteMetadata.description;
+  var metaDescription = ''
+  if (lang === 'en') {
+    metaDescription = description || site.siteMetadata.description_en;
+  }
+  else {
+    metaDescription = description || site.siteMetadata.description_es;
+  }
+  console.log(metaDescription)
   const metaImage = image || site.siteMetadata.image;
   return (
     <Helmet

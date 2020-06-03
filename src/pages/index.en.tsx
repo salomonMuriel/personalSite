@@ -10,7 +10,7 @@ import LangContext from 'context/LangContext';
 
 const IndexPage: React.FC = () => (
   <Layout>
-    <SEO title="About me" />
+    <SEO title="About me" lang='en'/>
     <HeroBanner />
     <Services />
     <hr />
