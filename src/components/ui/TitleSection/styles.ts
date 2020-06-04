@@ -9,13 +9,13 @@ export const TitleSection = styled.div`
   ${tw`flex flex-col w-full`};
 `;
 
-export const Title = styled.h2<StyledProps>`
-  ${tw`mb-4 text-lg font-bold w-full text-left`};
+export const Title = styled.h1<StyledProps>`
+  ${tw`mb-4 font-bold w-full text-left`};
   ${({ center }) => center && tw`text-center`};
 `;
 
 export const SubTitle = styled.h4<StyledProps>`
-  ${tw`text-sm text-indigo-500 w-full text-left`};
+  ${tw`text-indigo-500 w-full text-left`};
   ${({ center }) => center && tw`text-center`};
 `;
 

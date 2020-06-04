@@ -12,8 +12,8 @@ published: true
 
 _De los datos construimos insights, con los insights formamos conocimiento, y con conocimiento podemos tomar decisiones poderosas._
 
-**La Ciencia de Datos no es Magia. Ni tampoco Ciencia.**
-
+# **La Ciencia de Datos no es Magia. Ni tampoco Ciencia.**
+---
 Durante toda mi experiencia profesional me he dedicado de una manera u otra a manipular información. Mi trabajo ha tenido siempre algo que ver con tomar fuentes de información para transformarlas, luchar con ellas, enmarcarlas para darles sentido y presentarlas para que sean más entendibles. Para que pasen de ser bases de datos a ser español castizo, y que esa información le hable tan claro al ingeniero como al administrador o al vendedor.
 
 En muchas ocasiones me encuentro con que ese rol y esa labor en general son más bien poco entendidos, y a veces hasta ignorados. En el afán de cada día de cualquier empresa, los procesos misionales tienden a tomar una relevancia desmedida por su naturaleza inmediata, y aquellos menos urgentes dan un paso atrás en el escalafón de relevancia. Muchas fueron las ocasiones donde mis compañeros, jefes (¡o yo mismo!) ignorábamos los datos que teníamos en frente y tomábamos decisiones con el corazón, el estómago o hasta la cabeza si teníamos suerte, pero sin los datos, y sin los datos no hay órgano que le atine.

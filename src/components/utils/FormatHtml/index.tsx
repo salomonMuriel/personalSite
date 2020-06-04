@@ -5,7 +5,7 @@ interface Props {
 }
 
 const FormatHtml: React.FC<Props> = ({ content }) => (
-  <span
+  <div
     className="format-html"
     dangerouslySetInnerHTML={{
       __html: content

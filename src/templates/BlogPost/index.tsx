@@ -41,11 +41,13 @@ const BlogPost: React.FC<Props> = ({ data, pageContext }) => {
   const { previous, next } = pageContext;
   return (
     <Layout>
-      <SEO title={post.frontmatter.title} lang={post.frontmatter.langKey} description={post.frontmatter.description} image={post.frontmatter.static_image}/>
+      <SEO title={post.frontmatter.title} lang={post.frontmatter.langKey} description={post.frontmatter.description} image={post.frontmatter.static_image} />
       <Styled.Banner>
         <Styled.PostContainer section>
-        <TitleSection title={post.frontmatter.date} subtitle={post.frontmatter.title} />
-          <FormatHtml content={post.html} />
+          <TitleSection title={post.frontmatter.date} subtitle={post.frontmatter.title} />
+          <Styled.Content>
+            <FormatHtml content={post.html} />
+          </Styled.Content>
           <Styled.Links>
             <span>
               {previous && (

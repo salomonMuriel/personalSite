@@ -18,12 +18,14 @@ export const Title = styled.h3`
   ${tw`font-semibold mb-4`};
 `;
 
-export const Image = styled.figure`
-  ${tw`w-full rounded-lg overflow-hidden mt-4 mb-10`};
-`;
-
 export const Content = styled.div`
-  ${tw`w-full rounded-lg overflow-hidden mt-4 mb-10`};
+  ${tw`w-full overflow-hidden mb-10`};
+  h1 {
+    ${tw`my-4`};
+  }
+  span + em {
+    ${tw`text-sm not-italic text-center block w-full`};
+  }
 `
 
 export const Links = styled.div`

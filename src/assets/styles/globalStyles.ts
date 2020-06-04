@@ -14,7 +14,16 @@ export default createGlobalStyle`
     ${tw`mt-4`};
   }
 
-  span + em {
-    ${tw`text-sm not-italic text-center block w-full`};
-}
+  h1 {
+    ${tw`text-2xl`};
+  }
+
+  h2 {
+    ${tw`text-xl`};
+  }
+
+  h3 {
+    ${tw`text-lg`};
+  }
+
 `;
