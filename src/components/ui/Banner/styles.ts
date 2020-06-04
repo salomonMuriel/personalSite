@@ -15,4 +15,10 @@ export const Image = styled.figure`
 
 export const LeftContent = styled.p`
   ${tw`flex flex-col sm:w-full md:w-7/12`};
+  a{
+    ${tw`text-indigo-700 hover:text-indigo-900`};
+  }
+  p{
+    ${tw`mt-6`};
+  }
 `;
