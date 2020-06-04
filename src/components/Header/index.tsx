@@ -41,26 +41,30 @@ const Header: React.FC<Props> = ({ siteTitle }) => {
     <Location>
       {({ location }) => (
         <LangContext.Consumer>
-          {lang =>
-            <Styled.Header>
-              <Styled.Wrapper>
-                <Logo />
-                <Styled.Flag to={'/' + 'es' + location.pathname.substring(3)} onClick={() => lang.changeLang('es')}>
-                  <Styled.Img>
-                    <Img fluid={colombiaFlagFluid} title='Cambiar a Español' />
-                  </Styled.Img>
-                </Styled.Flag>
-                <Styled.Flag to={'/' + 'en' + location.pathname.substring(3)} onClick={() => lang.changeLang('en')}>
-                  <Styled.Img>
-                    <Img fluid={usaFlagFluid} title='Switch to English' />
-                  </Styled.Img>
-                </Styled.Flag>
-                <MainNav />
-              </Styled.Wrapper>
-            </Styled.Header>}
+          {lang => {
+            const isBlog = (location.pathname.substring(0,5) === '/blog')
+            return (
+              < Styled.Header >
+                <Styled.Wrapper>
+                  <Logo />
+                  <Styled.Flag hidden={isBlog} to={'/' + 'es' + location.pathname.substring(3)} onClick={() => lang.changeLang('es')}>
+                    <Styled.Img>
+                      <Img fluid={colombiaFlagFluid} title='Cambiar a Español' />
+                    </Styled.Img>
+                  </Styled.Flag>
+                  <Styled.Flag hidden={isBlog} to={'/' + 'en' + location.pathname.substring(3)} onClick={() => lang.changeLang('en')}>
+                    <Styled.Img>
+                      <Img fluid={usaFlagFluid} title='Switch to English' />
+                    </Styled.Img>
+                  </Styled.Flag>
+                  <MainNav />
+                </Styled.Wrapper>
+              </Styled.Header>)
+          }}
         </LangContext.Consumer>
-      )}
-    </Location>
+      )
+      }
+    </Location >
   )
 };
 
