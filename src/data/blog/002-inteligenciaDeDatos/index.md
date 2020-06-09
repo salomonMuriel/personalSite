@@ -27,7 +27,7 @@ Hay insights que son muy resistentes al tiempo y mantienen su calidad. Los refra
 
 Otros, cómo la serie de desayunos que he tenido en el último mes, son más etéreos. Hoy no recuerdo ya que desayuné antier, y no es poco común que olvide que he desayunado cuando llega la noche. El insight de la cantidad de calorías promedio ingeridas en un desayuno por mi en comparación a mi esposa sería divertido de conocer, pero olvidado con celeridad como un dato curioso dado que ni soy dado a contar calorías, ni mi esposa a hacer comparaciones de ese tipo.
 
-En general se sigue un proceso sencillo para crear los insights: En primer lugar debemos hacer una _pregunta_.  Luego, entendemos la calidad de los datos mismos y corregimos sus deficiencias. Por último, se busca crear insights que nos ayuden a responder nuestra pregunta por medio de modelos simples o sofísticados. Algunos modelos simples son las líneas de tiempo o las regresiones, algunos de los sofísticados son los Arboles de Decisión o las famosas Redes Neuronales. Nuestra pregunta va a determinar la complejidad de nuestros modelos:
+En general se sigue un proceso sencillo para crear los insights: En primer lugar debemos hacer una _pregunta_.  Luego, entendemos la calidad de los datos mismos y corregimos sus deficiencias. Por último, se busca crear insights que nos ayuden a responder nuestra pregunta por medio de modelos simples o sofisticados. Algunos modelos simples son las líneas de tiempo o las regresiones, algunos de los sofisticados son los Arboles de Decisión o las famosas Redes Neuronales. Nuestra pregunta va a determinar la complejidad de nuestros modelos:
 
 ¿Que pasó? Simple.
 ¿Por que pasó? No tan fácil. 
