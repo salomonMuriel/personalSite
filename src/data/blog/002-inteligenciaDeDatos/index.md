@@ -29,10 +29,10 @@ Otros, cómo la serie de desayunos que he tenido en el último mes, son más et�
 
 En general se sigue un proceso sencillo para crear los insights: En primer lugar debemos hacer una _pregunta_.  Luego, entendemos la calidad de los datos mismos y corregimos sus deficiencias. Por último, se busca crear insights que nos ayuden a responder nuestra pregunta por medio de modelos simples o sofisticados. Algunos modelos simples son las líneas de tiempo o las regresiones, algunos de los sofisticados son los Arboles de Decisión o las famosas Redes Neuronales. Nuestra pregunta va a determinar la complejidad de nuestros modelos:
 
-¿Que pasó? Simple.
-¿Por que pasó? No tan fácil. 
-¿Que va a pasar? Difícil.
-¿Que es lo mejor que puede pasar? Muy complejo.
+¿Qué pasó? Simple.
+¿Por qué pasó? No tan fácil. 
+¿Qué va a pasar? Difícil.
+¿Qué es lo mejor que puede pasar? Más Complejo.
 
 ![Nuestros modelos dependen de nuestra pregunta](./piramide.png) _Fuente: Dylan Gregersen_
 
