@@ -24,7 +24,13 @@ export const Content = styled.div`
     ${tw`my-4`};
   }
   span + em {
-    ${tw`text-sm not-italic text-center block w-full`};
+    ${tw`text-sm self-center not-italic text-center block w-full`};
+  }
+  h5 {
+    ${tw`text-xs my-4`};
+  }
+  a {
+    ${tw`text-indigo-700 hover:text-indigo-900`};
   }
 `
 
