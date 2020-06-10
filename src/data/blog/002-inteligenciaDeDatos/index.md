@@ -4,7 +4,7 @@ cover: './002.png'
 static_image: '/images/002.png'
 title: 'Inteligencia de Datos'
 description: 'La Ciencia de Datos construye conocimiento. Usar ese conocimiento es Inteligencia.'
-date: '2020-06-03'
+date: '2020-06-09'
 langKey: 'es'
 tags: ['Inteligencia de Datos','Ciencia de Datos', 'Data Intelligence','Data Science']
 published: true
@@ -12,7 +12,7 @@ published: true
 
 _Más sabe el diablo por viejo que por diablo._
 
-# **Inteligencia de Datos**
+# **Los datos son la base de todas las buenas decisiones.**
 ---
 
 Un _dato_ es un hecho medible y comunicable: una hora, lugar, nombre, número. Un dato es un "pedazo" o unidad de información. El hecho que mi esposa haya llegado hoy a la casa a las 5:54PM es un _dato_. Cuando hablamos de _información_, estamos hablando en realidad del plural o un conjunto de datos.
